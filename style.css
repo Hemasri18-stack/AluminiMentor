@@ -2476,3 +2476,142 @@ body {
     }
 
 }
+
+.login-form > label,
+.register-fieldset legend,
+.registration-extra {
+    color: #4d586d;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.input-wrapper {
+    height: 48px;
+}
+
+.input-wrapper input,
+.register-custom input,
+.registration-extra input {
+    font-family: "DM Sans", sans-serif;
+    font-size: 14px;
+}
+
+.registration-extra {
+    display: grid;
+    gap: 7px;
+    width: 100%;
+}
+
+.registration-extra input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 46px;
+    padding: 0 11px;
+    border: 1px solid #dfe3ea;
+    border-radius: 8px;
+    background: #fff;
+    color: #26324a;
+}
+
+.register-fieldset legend small,
+.role-description small,
+.choice-help {
+    color: #69758a;
+    font-size: 12px;
+}
+
+.choice-pill,
+.slot-day label {
+    gap: 7px;
+    padding: 9px 11px;
+    font-size: 13px;
+}
+
+.choice-pill input,
+.slot-day input {
+    width: 16px;
+    height: 16px;
+}
+
+.slot-day > b {
+    width: 44px;
+    font-size: 13px;
+}
+
+.register-custom {
+    font-size: 12px;
+}
+
+.register-custom input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 42px;
+    padding: 0 10px;
+}
+
+.workspace-tab,
+.logout-button,
+.workspace-button,
+.small-action {
+    font-size: 14px;
+}
+
+.section-heading > div > small {
+    font-size: 12px;
+}
+
+.section-heading p,
+.match-controls label,
+.workspace-form label,
+.workspace-record p,
+.workspace-empty,
+.api-indicator {
+    font-size: 14px;
+}
+
+.workspace-record h4 {
+    font-size: 16px;
+}
+
+.workspace-main h3 {
+    font-size: 17px;
+}
+
+.login-note {
+    font-size: 10px;
+}
+
+#monthlyReport {
+    display: block;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+}
+
+.report-row {
+    display: grid;
+    grid-template-columns: minmax(140px, 1.2fr) repeat(4, minmax(100px, 1fr));
+    align-items: center;
+    gap: 16px;
+    min-width: 700px;
+    padding: 14px 16px;
+    border-bottom: 1px solid #e1e4ea;
+    background: #fff;
+    color: #46536a;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.report-row > :not(:first-child) {
+    text-align: center;
+}
+
+.report-row.report-head {
+    border-radius: 8px 8px 0 0;
+    background: #e9edf5;
+    color: #24334b;
+    font-weight: 700;
+}
+
+.report-row:not(.report-head):nth-child(even) {
+    background: #f8f9fc;
+}
