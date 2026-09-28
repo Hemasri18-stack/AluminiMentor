@@ -1,0 +1,1075 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>MentorConnect | Alumni × Students</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     TECH BACKGROUND
+========================================================= -->
+
+<div class="tech-background">
+
+    <div class="code-grid"></div>
+
+    <div class="tech-orb orb-purple"></div>
+    <div class="tech-orb orb-blue"></div>
+    <div class="tech-orb orb-green"></div>
+
+    <div class="code-float code-1">
+        &lt;/&gt;
+    </div>
+
+    <div class="code-float code-2">
+        { API }
+    </div>
+
+    <div class="code-float code-3">
+        010101
+    </div>
+
+    <div class="code-float code-4">
+        JAVA
+    </div>
+
+    <div class="code-float code-5">
+        SQL
+    </div>
+
+    <div class="code-float code-6">
+        SPRING
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     LOGIN SCREEN
+========================================================= -->
+
+<div id="loginScreen" class="login-screen">
+
+    <div class="login-container">
+
+        <!-- =================================================
+             LEFT / LIBRARY + TECH PANEL
+        ================================================== -->
+
+        <section class="login-info">
+
+            <div class="library-glow"></div>
+
+            <div class="login-brand">
+
+                <div class="login-logo">
+                    MC
+                </div>
+
+                <div>
+                    <strong>MentorConnect</strong>
+
+                    <small>
+                        Alumni • Student • Growth
+                    </small>
+                </div>
+
+            </div>
+
+            <div class="info-content">
+                    <span class="terminal-dot"></span>
+                    mentorconnect.exe
+                    <span class="typing-cursor">_</span>
+                </div>
+
+                <span class="eyebrow">
+                    YOUR KNOWLEDGE NETWORK
+                </span>
+
+                <h1>
+                    Connect.
+                    <span>Code.</span>
+                    Grow.
+                </h1>
+
+                <p>
+                    Turn alumni experience into student progress.
+                    Discover mentors based on shared interests,
+                    technical skills and career goals.
+                </p>
+
+
+                <!-- TECH STACK -->
+
+                <div class="tech-stack">
+
+                    <span>JAVA</span>
+                    <span>SPRING BOOT</span>
+                    <span>SQL</span>
+                    <span>AI/ML</span>
+                    <span>WEB</span>
+
+                </div>
+
+
+                <!-- LIBRARY CARDS -->
+
+                <div class="library-items">
+
+                    <div class="library-item">
+
+                        <div class="library-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <div>
+                            <b>Learn from experience</b>
+
+                            <small>
+                                Connect with alumni who have already
+                                walked your career path.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="library-item">
+
+                        <div class="library-icon">
+                            { }
+                        </div>
+
+                        <div>
+                            <b>Build technical skills</b>
+
+                            <small>
+                                Find mentors according to your
+                                interests and technologies.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="library-item">
+
+                        <div class="library-icon">
+                            SQL
+                        </div>
+
+                        <div>
+                            <b>Track your journey</b>
+
+                            <small>
+                                Schedule sessions and monitor
+                                mentorship engagement.
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="login-footer">
+
+                <span>
+                    JAVA
+                </span>
+
+                <span>•</span>
+
+                <span>
+                    SPRING BOOT
+                </span>
+
+                <span>•</span>
+
+                <span>
+                    DATABASE
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             LOGIN / REGISTRATION CARD
+        ================================================== -->
+
+        <section class="login-card">
+
+            <div class="mobile-brand">
+
+                <div class="login-logo">
+                    MC
+                </div>
+
+                <b>
+                    MentorConnect
+                </b>
+
+            </div>
+
+
+            <div class="login-heading">
+
+                <span class="eyebrow">
+                    INITIALIZE PROFILE
+                </span>
+
+                <h2>
+                    Who are you connecting as?
+                </h2>
+
+                <p>
+                    Choose your role and build your mentorship profile.
+                </p>
+
+            </div>
+
+
+            <!-- =================================================
+                 ROLE SWITCH
+            ================================================== -->
+
+            <div
+                id="roleSwipeArea"
+                class="role-switch"
+            >
+
+                <div
+                    id="roleSlider"
+                    class="role-slider"
+                ></div>
+
+
+                <button
+                    id="studentRoleBtn"
+                    class="role-btn active"
+                    type="button"
+                    onclick="selectRole('student')"
+                >
+
+                    <span class="role-icon">
+                        🎓
+                    </span>
+
+                    <span>
+                        Student
+                    </span>
+
+                </button>
+
+
+                <button
+                    id="mentorRoleBtn"
+                    class="role-btn"
+                    type="button"
+                    onclick="selectRole('mentor')"
+                >
+
+                    <span class="role-icon">
+                        👨‍🏫
+                    </span>
+
+                    <span>
+                        Mentor
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- SWIPE INDICATOR -->
+
+            <div class="swipe-hint">
+
+                <span>←</span>
+
+                <small>
+                    Swipe or tap to switch role
+                </small>
+
+                <span>→</span>
+
+            </div>
+
+
+            <!-- ROLE STATUS -->
+
+            <div
+                id="roleDescription"
+                class="role-description"
+            >
+
+                <span>
+                    🎓
+                </span>
+
+                <div>
+
+                    <b>
+                        Student Portal
+                    </b>
+
+                    <small>
+                        Find alumni mentors based on your
+                        interests and career goals.
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 REGISTRATION FORM
+            ================================================== -->
+
+            <form
+                id="loginForm"
+                class="login-form"
+            >
+
+                <label>
+                    Full name
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span>◉</span>
+
+                    <input
+                        id="profileName"
+                        type="text"
+                        placeholder="Your full name"
+                        required
+                    >
+
+                </div>
+
+
+                <label>
+                    Email
+                </label>
+
+                <div class="input-wrapper">
+
+                    <span>✉</span>
+
+                    <input
+                        id="profileEmail"
+                        type="email"
+                        placeholder="name@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- ROLE SPECIFIC FIELDS -->
+
+                <div id="registrationFields"></div>
+
+
+                <!-- =================================================
+                     INTERESTS
+                ================================================== -->
+
+                <fieldset class="register-fieldset">
+
+                    <legend>
+                        Interests
+                        <small>
+                            Select technologies or domains
+                        </small>
+                    </legend>
+
+                    <div
+                        id="interestOptions"
+                        class="interest-options"
+                    ></div>
+
+                    <label class="register-custom">
+
+                        Add interests
+
+                        <input
+                            id="customTags"
+                            type="text"
+                            placeholder="Java, AI, Data Science..."
+                        >
+
+                    </label>
+
+                </fieldset>
+
+
+                <!-- =================================================
+                     AVAILABILITY
+                ================================================== -->
+
+                <fieldset class="register-fieldset">
+
+                    <legend id="slotLegend">
+
+                        Weekly availability
+
+                        <small>
+                            Select one or more slots
+                        </small>
+
+                    </legend>
+
+                    <div
+                        id="slotOptions"
+                        class="slot-options"
+                    ></div>
+
+                </fieldset>
+
+
+                <!-- =================================================
+                     SUBMIT
+                ================================================== -->
+
+                <button
+                    class="login-button"
+                    type="submit"
+                >
+
+                    <span id="loginButtonText">
+                        Initialize Student Profile
+                    </span>
+
+                    <span class="button-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </form>
+
+
+            <p class="login-note">
+                MentorConnect • Alumni-Student Mentorship Platform
+            </p>
+
+        </section>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     APPLICATION
+========================================================= -->
+
+<div
+    id="application"
+    class="application hidden"
+>
+
+    <header class="workspace-header">
+
+        <div>
+
+            <span class="eyebrow">
+                MENTORCONNECT WORKSPACE
+            </span>
+
+            <h1 id="welcomeUser">
+                Your mentorship workspace
+            </h1>
+
+        </div>
+
+
+        <div class="api-indicator">
+
+            <i id="apiDot"></i>
+
+            <span id="apiStatus">
+                Checking backend
+            </span>
+
+        </div>
+
+    </header>
+
+
+    <nav class="workspace-nav">
+
+        <button
+            class="workspace-tab active"
+            data-panel="matches"
+        >
+            Find a mentor
+        </button>
+
+        <button
+            class="workspace-tab"
+            data-panel="sessions"
+        >
+            Sessions
+        </button>
+
+        <button
+            class="workspace-tab"
+            data-panel="reports"
+        >
+            Monthly report
+        </button>
+
+        <button
+            class="workspace-tab"
+            data-panel="directory"
+        >
+            Directory
+        </button>
+
+        <button
+            class="logout-button"
+            onclick="logout()"
+        >
+            Register another profile
+        </button>
+
+    </nav>
+
+
+    <main class="workspace-main">
+
+
+        <!-- MATCHES -->
+
+        <section
+            class="workspace-panel active"
+            data-view="matches"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <small>
+                        INTEREST + AVAILABILITY MATCHING
+                    </small>
+
+                    <h2>
+                        Compatible mentors
+                    </h2>
+
+                    <p>
+                        Matches share interests and weekly
+                        availability with open mentee capacity.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="match-controls">
+
+                <label>
+
+                    Student
+
+                    <select id="matchStudent">
+
+                        <option value="">
+                            Choose a student
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <button
+                    id="findMatchesBtn"
+                    class="workspace-button"
+                >
+                    Find matches →
+                </button>
+
+            </div>
+
+
+            <div
+                id="matchesList"
+                class="workspace-list"
+            >
+
+                <p class="workspace-empty">
+                    Select a student to see matches.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- SESSIONS -->
+
+        <section
+            class="workspace-panel"
+            data-view="sessions"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <small>
+                        PLAN AND TRACK
+                    </small>
+
+                    <h2>
+                        Mentorship sessions
+                    </h2>
+
+                    <p>
+                        Schedule and track mentorship sessions.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <form
+                id="sessionForm"
+                class="workspace-form"
+            >
+
+                <label>
+                    Mentorship
+
+                    <select
+                        id="sessionPair"
+                        name="mentorshipPairId"
+                        required
+                    >
+
+                        <option value="">
+                            Choose a mentorship
+                        </option>
+
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Topic
+
+                    <input
+                        name="topic"
+                        placeholder="e.g. Spring Boot"
+                        required
+                    >
+
+                </label>
+
+
+                <label>
+                    Available date and time
+
+                    <select
+                        id="sessionDate"
+                        name="sessionDate"
+                        required
+                    >
+                        <option value="">Choose a mentorship first</option>
+                    </select>
+
+                </label>
+
+
+                <label>
+                    Duration
+
+                    <input
+                        name="durationMinutes"
+                        type="number"
+                        min="1"
+                        max="60"
+                        value="60"
+                        required
+                    >
+
+                </label>
+
+
+                <button class="workspace-button">
+                    Schedule session →
+                </button>
+
+            </form>
+
+
+            <div
+                id="sessionsList"
+                class="workspace-list"
+            ></div>
+
+        </section>
+
+
+        <!-- REPORT -->
+
+        <section
+            class="workspace-panel"
+            data-view="reports"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <small>
+                        ENGAGEMENT
+                    </small>
+
+                    <h2>
+                        Monthly mentorship report
+                    </h2>
+
+                    <p>
+                        Session totals grouped by month.
+                    </p>
+
+                </div>
+
+
+                <button
+                    id="refreshReportBtn"
+                    class="workspace-button secondary"
+                >
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div
+                id="monthlyReport"
+                class="workspace-list"
+            ></div>
+
+
+            <h3>
+                Mentorship activity
+            </h3>
+
+
+            <div
+                id="mentorshipReport"
+                class="workspace-list"
+            ></div>
+
+        </section>
+
+
+        <!-- DIRECTORY -->
+
+        <section
+            class="workspace-panel"
+            data-view="directory"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <small>
+                        COMMUNITY
+                    </small>
+
+                    <h2>
+                        Student and mentor directory
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+            <div class="directory-grid">
+
+                <div>
+
+                    <h3>
+                        Students
+                    </h3>
+
+                    <div
+                        id="studentsList"
+                        class="workspace-list"
+                    ></div>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Alumni mentors
+                    </h3>
+
+                    <div
+                        id="mentorsList"
+                        class="workspace-list"
+                    ></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div
+    id="toast"
+    class="login-toast"
+></div>
+
+
+<script src="api.js"></script>
+
+<script src="portal.js"></script>
+
+
+<!-- =========================================================
+     ROLE SWIPE CONTROLLER
+========================================================= -->
+
+<script>
+
+let currentRole = "student";
+
+function updateLegacyRoleDisplay(role) {
+
+    currentRole = role;
+
+    const slider =
+        document.getElementById("roleSlider");
+
+    const studentBtn =
+        document.getElementById("studentRoleBtn");
+
+    const mentorBtn =
+        document.getElementById("mentorRoleBtn");
+
+    const description =
+        document.getElementById("roleDescription");
+
+    const buttonText =
+        document.getElementById("loginButtonText");
+
+
+    if (role === "mentor") {
+
+        slider.classList.add("mentor");
+
+        studentBtn.classList.remove("active");
+
+        mentorBtn.classList.add("active");
+
+        description.classList.add("mentor");
+
+        description.innerHTML = `
+            <span>👨‍🏫</span>
+
+            <div>
+                <b>Mentor Portal</b>
+
+                <small>
+                    Share your experience and guide students
+                    based on your expertise.
+                </small>
+            </div>
+        `;
+
+        buttonText.textContent =
+            "Initialize Mentor Profile";
+
+    } else {
+
+        slider.classList.remove("mentor");
+
+        mentorBtn.classList.remove("active");
+
+        studentBtn.classList.add("active");
+
+        description.classList.remove("mentor");
+
+        description.innerHTML = `
+            <span>🎓</span>
+
+            <div>
+                <b>Student Portal</b>
+
+                <small>
+                    Find alumni mentors based on your
+                    interests and career goals.
+                </small>
+            </div>
+        `;
+
+        buttonText.textContent =
+            "Initialize Student Profile";
+    }
+
+    /*
+       Allow existing portal/app logic to know
+       which role is selected.
+    */
+
+    window.selectedRole = role;
+
+}
+
+
+/* =========================================================
+   SWIPE SUPPORT
+========================================================= */
+
+const swipeArea =
+    document.getElementById("roleSwipeArea");
+
+let touchStartX = 0;
+let touchEndX = 0;
+
+
+swipeArea.addEventListener(
+    "touchstart",
+    function(event) {
+
+        touchStartX =
+            event.changedTouches[0].screenX;
+
+    },
+    { passive: true }
+);
+
+
+swipeArea.addEventListener(
+    "touchend",
+    function(event) {
+
+        touchEndX =
+            event.changedTouches[0].screenX;
+
+        handleSwipe();
+
+    },
+    { passive: true }
+);
+
+
+function handleSwipe() {
+
+    const distance =
+        touchEndX - touchStartX;
+
+    if (Math.abs(distance) < 40) {
+        return;
+    }
+
+    if (distance < 0) {
+
+        selectRole("mentor");
+
+    } else {
+
+        selectRole("student");
+
+    }
+
+}
+
+
+/* =========================================================
+   MOUSE DRAG SUPPORT
+========================================================= */
+
+let mouseStartX = 0;
+
+swipeArea.addEventListener(
+    "mousedown",
+    function(event) {
+
+        mouseStartX = event.clientX;
+
+    }
+);
+
+
+swipeArea.addEventListener(
+    "mouseup",
+    function(event) {
+
+        const distance =
+            event.clientX - mouseStartX;
+
+        if (Math.abs(distance) < 40) {
+            return;
+        }
+
+        if (distance < 0) {
+
+            selectRole("mentor");
+
+        } else {
+
+            selectRole("student");
+
+        }
+
+    }
+);
+
+
+/* Default */
+
+window.selectedRole = "student";
+
+</script>
+
+</body>
+</html>

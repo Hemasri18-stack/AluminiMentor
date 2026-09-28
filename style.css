@@ -1,0 +1,2478 @@
+/* =========================================================
+   MENTORCONNECT
+   TECH / CODING / LIBRARY UI
+========================================================= */
+
+:root {
+
+    --navy: #07111f;
+    --navy-2: #0b1728;
+
+    --panel: #101d30;
+
+    --purple: #8b7cff;
+    --purple-light: #b5aaff;
+
+    --blue: #45a3ff;
+    --cyan: #38d9ff;
+
+    --green: #53d18b;
+
+    --cream: #f7f8fc;
+    --white: #ffffff;
+
+    --text: #18233d;
+    --muted: #778198;
+
+    --border: #e4e7ee;
+
+    --shadow:
+        0 30px 90px rgba(0, 0, 0, .25);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    margin: 0;
+    min-height: 100%;
+}
+
+
+body {
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color: var(--text);
+
+    background: #07111f;
+
+}
+
+
+/* =========================================================
+   TECH BACKGROUND
+========================================================= */
+
+.tech-background {
+
+    position: fixed;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    background:
+
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(85, 75, 220, .20),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 80% 70%,
+            rgba(0, 160, 255, .15),
+            transparent 25%
+        ),
+
+        #07111f;
+
+    z-index: -10;
+
+}
+
+
+/* GRID */
+
+.code-grid {
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            transparent,
+            black 25%,
+            black 75%,
+            transparent
+        );
+
+}
+
+
+/* =========================================================
+   TECH ORBS
+========================================================= */
+
+.tech-orb {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    animation:
+        techFloat 8s ease-in-out infinite;
+
+}
+
+
+.orb-purple {
+
+    width: 420px;
+    height: 420px;
+
+    background: #6c5ce7;
+
+    left: -160px;
+    top: -120px;
+
+    opacity: .25;
+
+}
+
+
+.orb-blue {
+
+    width: 400px;
+    height: 400px;
+
+    background: #007bff;
+
+    right: -160px;
+    top: 25%;
+
+    opacity: .20;
+
+    animation-delay: -3s;
+
+}
+
+
+.orb-green {
+
+    width: 300px;
+    height: 300px;
+
+    background: #00c878;
+
+    left: 40%;
+    bottom: -170px;
+
+    opacity: .10;
+
+    animation-delay: -5s;
+
+}
+
+
+@keyframes techFloat {
+
+    50% {
+
+        transform:
+            translateY(-30px)
+            scale(1.08);
+
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING CODE
+========================================================= */
+
+.code-float {
+
+    position: absolute;
+
+    color: rgba(150, 190, 255, .18);
+
+    font-family:
+        "JetBrains Mono",
+        monospace;
+
+    font-size: 13px;
+
+    letter-spacing: 2px;
+
+    animation:
+        codeFloat 7s ease-in-out infinite;
+
+}
+
+
+.code-1 {
+    top: 15%;
+    left: 5%;
+}
+
+
+.code-2 {
+    top: 30%;
+    right: 6%;
+}
+
+
+.code-3 {
+    bottom: 18%;
+    left: 9%;
+}
+
+
+.code-4 {
+    top: 10%;
+    right: 20%;
+}
+
+
+.code-5 {
+    bottom: 15%;
+    right: 10%;
+}
+
+
+.code-6 {
+    top: 65%;
+    left: 20%;
+}
+
+
+@keyframes codeFloat {
+
+    50% {
+
+        transform:
+            translateY(-18px);
+
+        opacity: .35;
+
+    }
+
+}
+
+
+/* =========================================================
+   LOGIN SCREEN
+========================================================= */
+
+.login-screen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 35px 20px;
+
+    position: relative;
+
+    overflow-y: auto;
+
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.login-container {
+
+    width:
+        min(1120px, 100%);
+
+    min-height: 680px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        .92fr;
+
+    background:
+        rgba(255,255,255,.96);
+
+    border:
+        1px solid rgba(255,255,255,.6);
+
+    border-radius: 28px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 35px 100px
+        rgba(0,0,0,.35);
+
+    position: relative;
+
+    z-index: 2;
+
+    animation:
+        cardAppear .7s
+        cubic-bezier(.2,.8,.2,1);
+
+}
+
+
+@keyframes cardAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(35px)
+            scale(.96);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+
+    }
+
+}
+
+
+/* =========================================================
+   LEFT TECH LIBRARY
+========================================================= */
+
+.login-info {
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 45px;
+
+    color: white;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+
+        radial-gradient(
+            circle at 80% 10%,
+            rgba(139,124,255,.25),
+            transparent 25%
+        ),
+
+        linear-gradient(
+            145deg,
+            #07111f,
+            #0d1d32 55%,
+            #132844
+        );
+
+}
+
+
+.login-info::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size: 32px 32px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            black,
+            transparent
+        );
+
+}
+
+
+.library-glow {
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        #7468ff;
+
+    filter: blur(110px);
+
+    opacity: .13;
+
+    right: -100px;
+    bottom: -80px;
+
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.login-brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+.login-logo {
+
+    width: 50px;
+    height: 50px;
+
+    border-radius: 15px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #9a87ff,
+            #4b83ff
+        );
+
+    color: white;
+
+    font-family:
+        "Plus Jakarta Sans";
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 30px
+        rgba(92,75,220,.35);
+
+}
+
+
+.login-brand strong {
+
+    display: block;
+
+    font-family:
+        "Plus Jakarta Sans";
+
+    font-size: 17px;
+
+}
+
+
+.login-brand small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8291ad;
+
+    font-family:
+        "JetBrains Mono";
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.info-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    margin: auto 0;
+
+    max-width: 500px;
+
+}
+
+
+.terminal-line {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+
+    padding: 7px 11px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 6px;
+
+    background:
+        rgba(0,0,0,.18);
+
+    color: #7ee8b2;
+
+    font-family:
+        "JetBrains Mono";
+
+    font-size: 9px;
+
+}
+
+
+.terminal-dot {
+
+    width: 6px;
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #4ee18a;
+
+    box-shadow:
+        0 0 10px
+        #4ee18a;
+
+}
+
+
+.typing-cursor {
+
+    animation:
+        blink .8s infinite;
+
+}
+
+
+@keyframes blink {
+
+    50% {
+        opacity: 0;
+    }
+
+}
+
+
+.eyebrow {
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #748199;
+
+}
+
+
+.login-info .eyebrow {
+
+    color: #8998b6;
+
+}
+
+
+.info-content h1 {
+
+    margin: 15px 0;
+
+    font-family:
+        "Plus Jakarta Sans";
+
+    font-size:
+        clamp(43px, 5vw, 68px);
+
+    line-height: .98;
+
+    letter-spacing: -3px;
+
+}
+
+
+.info-content h1 span {
+
+    background:
+        linear-gradient(
+            90deg,
+            #a896ff,
+            #54c9ff
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color:
+        transparent;
+
+}
+
+
+.info-content > p {
+
+    max-width: 450px;
+
+    color: #b7c3d8;
+
+    line-height: 1.7;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================================================
+   TECH STACK
+========================================================= */
+
+.tech-stack {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+
+    margin-top: 25px;
+
+}
+
+
+.tech-stack span {
+
+    padding: 6px 9px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.08);
+
+    border-radius: 5px;
+
+    background:
+        rgba(255,255,255,.04);
+
+    color: #93a5c4;
+
+    font-family:
+        "JetBrains Mono";
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================================
+   LIBRARY ITEMS
+========================================================= */
+
+.library-items {
+
+    display: grid;
+
+    gap: 10px;
+
+    margin-top: 25px;
+
+}
+
+
+.library-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 10px;
+
+    border:
+        1px solid
+        rgba(255,255,255,.06);
+
+    border-radius: 9px;
+
+    background:
+        rgba(255,255,255,.035);
+
+    backdrop-filter:
+        blur(8px);
+
+    transition:
+        .25s ease;
+
+}
+
+
+.library-item:hover {
+
+    transform:
+        translateX(7px);
+
+    border-color:
+        rgba(150,130,255,.3);
+
+    background:
+        rgba(255,255,255,.07);
+
+}
+
+
+.library-icon {
+
+    width: 38px;
+    height: 38px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 8px;
+
+    background:
+        rgba(124,108,255,.14);
+
+    border:
+        1px solid
+        rgba(142,127,255,.18);
+
+    color: #a79aff;
+
+    font-family:
+        "JetBrains Mono";
+
+    font-size: 10px;
+
+}
+
+
+.library-item b {
+
+    display: block;
+
+    font-size: 10px;
+
+}
+
+
+.library-item small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #8290a9;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.login-footer {
+
+    position: relative;
+
+    z-index: 2;
+
+    display: flex;
+
+    gap: 10px;
+
+    color: #60708b;
+
+    font-family:
+        "JetBrains Mono";
+
+    font-size: 8px;
+
+}
+
+
+/* =========================================================
+   RIGHT CARD
+========================================================= */
+
+.login-card {
+
+    padding:
+        48px 50px 30px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: flex-start;
+
+    background:
+        rgba(255,255,255,.98);
+
+}
+
+
+.mobile-brand {
+
+    display: none;
+
+}
+
+
+.login-heading h2 {
+
+    margin:
+        8px 0;
+
+    color:
+        #18233d;
+
+    font-family:
+        "Plus Jakarta Sans";
+
+    font-size: 27px;
+
+    letter-spacing:
+        -.8px;
+
+}
+
+
+.login-heading p {
+
+    margin-bottom:
+        23px;
+
+    color:
+        #788296;
+
+    font-size: 11px;
+
+}
+
+
+/* =========================================================
+   ROLE SWITCH
+========================================================= */
+
+.role-switch {
+
+    position: relative;
+
+    height: 61px;
+
+    padding: 5px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    background:
+        #edf0f6;
+
+    border:
+        1px solid #e3e6ee;
+
+}
+
+
+.role-slider {
+
+    position: absolute;
+
+    width:
+        calc(50% - 5px);
+
+    height:
+        calc(100% - 10px);
+
+    top: 5px;
+
+    left: 5px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f8f9ff
+        );
+
+    box-shadow:
+        0 7px 20px
+        rgba(30,40,70,.13);
+
+    transition:
+        transform .45s
+        cubic-bezier(.68,-.55,.27,1.55);
+
+}
+
+
+.role-slider.mentor {
+
+    transform:
+        translateX(100%);
+
+}
+
+
+.role-btn {
+
+    position: relative;
+
+    z-index: 2;
+
+    border: 0;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    color: #7d8799;
+
+    font-family: inherit;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    transition: .25s;
+
+}
+
+
+.role-btn.active {
+
+    color:
+        #26324a;
+
+}
+
+
+.role-icon {
+
+    font-size: 17px;
+
+}
+
+
+.role-btn:hover {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   SWIPE HINT
+========================================================= */
+
+.swipe-hint {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 9px;
+
+    margin: 9px 0;
+
+    color: #9ca4b4;
+
+}
+
+
+.swipe-hint span {
+
+    font-size: 12px;
+
+    animation:
+        swipeArrow 1.3s
+        infinite;
+
+}
+
+
+.swipe-hint small {
+
+    font-family:
+        "JetBrains Mono";
+
+    font-size: 7px;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+@keyframes swipeArrow {
+
+    50% {
+        transform:
+            translateX(5px);
+    }
+
+}
+
+
+/* =========================================================
+   ROLE DESCRIPTION
+========================================================= */
+
+.role-description {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 12px;
+
+    margin-bottom: 17px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f3efff,
+            #f8f7ff
+        );
+
+    border:
+        1px solid
+        #e2dcff;
+
+    animation:
+        roleChange .35s ease;
+
+}
+
+
+.role-description.mentor {
+
+    background:
+        linear-gradient(
+            135deg,
+            #eef7ff,
+            #f5fbff
+        );
+
+    border-color:
+        #d5e8ff;
+
+}
+
+
+.role-description > span {
+
+    font-size: 24px;
+
+}
+
+
+.role-description b {
+
+    display: block;
+
+    font-size: 11px;
+
+}
+
+
+.role-description small {
+
+    display: block;
+
+    margin-top: 3px;
+
+    color: #788296;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+}
+
+
+@keyframes roleChange {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateX(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.login-form {
+
+    display: grid;
+
+    gap: 8px;
+
+}
+
+
+.login-form > label {
+
+    color:
+        #5e687d;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+}
+
+
+.input-wrapper {
+
+    height: 43px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding:
+        0 11px;
+
+    border:
+        1px solid
+        #dfe3ea;
+
+    border-radius: 8px;
+
+    background:
+        #ffffff;
+
+    transition:
+        .2s;
+
+}
+
+
+.input-wrapper:focus-within {
+
+    border-color:
+        #8173ee;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(113,103,232,.09);
+
+}
+
+
+.input-wrapper input {
+
+    flex: 1;
+
+    min-width: 0;
+
+    border: 0;
+
+    outline: 0;
+
+    font-family: inherit;
+
+    font-size: 10px;
+
+}
+
+
+/* =========================================================
+   FIELDSETS
+========================================================= */
+
+.register-fieldset {
+
+    min-width: 0;
+
+    margin:
+        4px 0 0;
+
+    padding:
+        9px;
+
+    border:
+        1px solid
+        #e2e5eb;
+
+    border-radius:
+        8px;
+
+}
+
+
+.register-fieldset legend {
+
+    padding:
+        0 5px;
+
+    color:
+        #303b51;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+}
+
+
+.register-fieldset legend small {
+
+    display:
+        block;
+
+    margin-top:
+        2px;
+
+    color:
+        #8991a0;
+
+    font-size:
+        7px;
+
+    font-weight:
+        500;
+
+}
+
+
+.interest-options,
+.slot-options {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    gap:
+        5px;
+
+}
+
+
+.choice-pill,
+.slot-day label {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        4px;
+
+    padding:
+        5px 7px;
+
+    border:
+        1px solid
+        #e1e4ea;
+
+    border-radius:
+        6px;
+
+    background:
+        #fff;
+
+    color:
+        #536077;
+
+    font-size:
+        8px;
+
+    cursor:
+        pointer;
+
+    transition:
+        .2s;
+
+}
+
+
+.choice-pill:hover,
+.slot-day label:hover {
+
+    transform:
+        translateY(-1px);
+
+    border-color:
+        #bcb4ff;
+
+}
+
+
+.choice-pill:has(input:checked),
+.slot-day label:has(input:checked) {
+
+    border-color:
+        #6f63df;
+
+    background:
+        #f0edff;
+
+    color:
+        #4037a3;
+
+}
+
+
+.choice-pill input,
+.slot-day input {
+
+    accent-color:
+        #7063df;
+
+}
+
+
+.register-custom {
+
+    display:
+        grid;
+
+    gap:
+        4px;
+
+    width:
+        100%;
+
+    margin-top:
+        7px;
+
+    color:
+        #727c8e;
+
+    font-size:
+        8px;
+
+}
+
+
+.register-custom input {
+
+    height:
+        33px;
+
+    border:
+        1px solid
+        #dfe3ea;
+
+    border-radius:
+        6px;
+
+    padding:
+        0 8px;
+
+    font:
+        inherit;
+
+}
+
+
+.slot-day {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        5px;
+
+    width:
+        100%;
+
+}
+
+
+.slot-day > b {
+
+    width:
+        34px;
+
+    color:
+        #58647a;
+
+    font-size:
+        8px;
+
+}
+
+
+.slot-day label {
+
+    padding:
+        4px 5px;
+
+    font-size:
+        7px;
+
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.login-button {
+
+    height:
+        46px;
+
+    border:
+        0;
+
+    border-radius:
+        9px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #7668ed,
+            #457ee7
+        );
+
+    color:
+        white;
+
+    font-family:
+        inherit;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    padding:
+        0 15px;
+
+    box-shadow:
+        0 10px 25px
+        rgba(86,76,220,.23);
+
+    transition:
+        .25s;
+
+}
+
+
+.login-button:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 32px
+        rgba(86,76,220,.3);
+
+}
+
+
+.button-arrow {
+
+    font-size:
+        17px;
+
+    transition:
+        .2s;
+
+}
+
+
+.login-button:hover
+.button-arrow {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+/* =========================================================
+   NOTE
+========================================================= */
+
+.login-note {
+
+    margin-top:
+        13px;
+
+    text-align:
+        center;
+
+    color:
+        #a0a6b2;
+
+    font-size:
+        7px;
+
+}
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+.application.hidden {
+
+    display:
+        none;
+
+}
+
+
+.application {
+
+    min-height:
+        100vh;
+
+    padding:
+        32px clamp(18px, 5vw, 70px);
+
+    background:
+
+        radial-gradient(
+            circle at 90% 0%,
+            rgba(108,92,231,.08),
+            transparent 25%
+        ),
+
+        #f3f5f8;
+
+    color:
+        #1e2b3d;
+
+}
+
+
+.workspace-header {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+
+    max-width:
+        1180px;
+
+    margin:
+        0 auto 24px;
+
+}
+
+
+.workspace-header h1 {
+
+    margin:
+        6px 0 0;
+
+    font:
+        700 25px
+        "Plus Jakarta Sans";
+
+}
+
+
+.workspace-nav {
+
+    display:
+        flex;
+
+    flex-wrap:
+        wrap;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    max-width:
+        1180px;
+
+    margin:
+        0 auto;
+
+    padding-bottom:
+        13px;
+
+    border-bottom:
+        1px solid
+        #dcdfe6;
+
+}
+
+
+.workspace-tab,
+.logout-button,
+.workspace-button,
+.small-action {
+
+    min-height:
+        38px;
+
+    border:
+        1px solid transparent;
+
+    border-radius:
+        7px;
+
+    padding:
+        0 13px;
+
+    font:
+        600 11px
+        "DM Sans";
+
+    cursor:
+        pointer;
+
+}
+
+
+.workspace-tab {
+
+    background:
+        transparent;
+
+    color:
+        #687286;
+
+}
+
+
+.workspace-tab.active {
+
+    background:
+        #18283d;
+
+    color:
+        white;
+
+    box-shadow:
+        0 5px 15px
+        rgba(20,30,50,.15);
+
+}
+
+
+.logout-button {
+
+    margin-left:
+        auto;
+
+    border-color:
+        #d6d9e0;
+
+    background:
+        white;
+
+    color:
+        #596477;
+
+}
+
+
+/* =========================================================
+   WORKSPACE
+========================================================= */
+
+.workspace-main {
+
+    max-width:
+        1180px;
+
+    margin:
+        0 auto;
+
+}
+
+
+.workspace-panel {
+
+    display:
+        none;
+
+    padding:
+        28px 0;
+
+}
+
+
+.workspace-panel.active {
+
+    display:
+        block;
+
+    animation:
+        cardAppear .35s ease both;
+
+}
+
+
+.section-heading {
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        space-between;
+
+    gap:
+        18px;
+
+    margin-bottom:
+        22px;
+
+}
+
+
+.section-heading > div > small {
+
+    color:
+        #6c5ddd;
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.4px;
+
+}
+
+
+.section-heading h2 {
+
+    margin:
+        7px 0;
+
+    font:
+        700 24px
+        "Plus Jakarta Sans";
+
+}
+
+
+.section-heading p {
+
+    margin:
+        0;
+
+    color:
+        #727c8b;
+
+    font-size:
+        12px;
+
+}
+
+
+/* =========================================================
+   WORKSPACE FORMS
+========================================================= */
+
+.match-controls,
+.workspace-form {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    align-items:
+        end;
+
+    gap:
+        12px;
+
+    padding:
+        16px;
+
+    border:
+        1px solid
+        #e0e3e9;
+
+    border-radius:
+        9px;
+
+    background:
+        white;
+
+    box-shadow:
+        0 8px 30px
+        rgba(30,40,60,.04);
+
+}
+
+
+.match-controls label,
+.workspace-form label {
+
+    display:
+        grid;
+
+    gap:
+        6px;
+
+    color:
+        #596477;
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+}
+
+
+.match-controls select,
+.workspace-form input,
+.workspace-form select {
+
+    min-width:
+        0;
+
+    height:
+        42px;
+
+    border:
+        1px solid
+        #dedfe6;
+
+    border-radius:
+        8px;
+
+    padding:
+        0 11px;
+
+    background:
+        white;
+
+    color:
+        #18233d;
+
+    font:
+        inherit;
+
+}
+
+
+.workspace-button {
+
+    background:
+        #304a39;
+
+    color:
+        white;
+
+}
+
+
+.workspace-button.secondary {
+
+    border-color:
+        #d6d8d1;
+
+    background:
+        white;
+
+    color:
+        #46546a;
+
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.workspace-list {
+
+    display:
+        grid;
+
+    gap:
+        9px;
+
+    margin-top:
+        15px;
+
+}
+
+
+.workspace-record {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        16px;
+
+    padding:
+        15px;
+
+    border:
+        1px solid
+        #e0e3e9;
+
+    border-radius:
+        8px;
+
+    background:
+        white;
+
+    transition:
+        .2s;
+
+}
+
+
+.workspace-record:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(30,40,60,.07);
+
+}
+
+
+.workspace-record h4 {
+
+    margin:
+        0 0 6px;
+
+    color:
+        #26374a;
+
+    font:
+        700 13px
+        "Plus Jakarta Sans";
+
+}
+
+
+.workspace-record p {
+
+    margin:
+        4px 0 0;
+
+    color:
+        #6e788a;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+
+}
+
+
+.workspace-empty {
+
+    margin:
+        0;
+
+    padding:
+        20px;
+
+    border:
+        1px dashed
+        #cdd2dc;
+
+    border-radius:
+        8px;
+
+    color:
+        #778092;
+
+    font-size:
+        11px;
+
+    text-align:
+        center;
+
+}
+
+
+/* =========================================================
+   API STATUS
+========================================================= */
+
+.api-indicator {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    color:
+        #657084;
+
+    font-size:
+        11px;
+
+}
+
+
+.api-indicator i {
+
+    width:
+        8px;
+
+    height:
+        8px;
+
+    border-radius:
+        50%;
+
+    background:
+        #d88b4a;
+
+}
+
+
+.api-indicator i.online {
+
+    background:
+        #3f8b56;
+
+    box-shadow:
+        0 0 0 3px
+        #dcebdc;
+
+}
+
+
+/* =========================================================
+   DIRECTORY
+========================================================= */
+
+.directory-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap:
+        20px;
+
+}
+
+
+.workspace-main h3 {
+
+    margin:
+        24px 0 8px;
+
+    color:
+        #27374a;
+
+    font:
+        700 15px
+        "Plus Jakarta Sans";
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.login-toast {
+
+    position:
+        fixed;
+
+    bottom:
+        25px;
+
+    right:
+        25px;
+
+    z-index:
+        100;
+
+    background:
+        #17213a;
+
+    color:
+        white;
+
+    padding:
+        13px 18px;
+
+    border-radius:
+        9px;
+
+    font-size:
+        11px;
+
+    opacity:
+        0;
+
+    transform:
+        translateY(15px);
+
+    pointer-events:
+        none;
+
+    transition:
+        .3s;
+
+}
+
+
+.login-toast.show {
+
+    opacity:
+        1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:850px) {
+
+    .login-screen {
+
+        padding:
+            15px;
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .login-container {
+
+        grid-template-columns:
+            1fr;
+
+        max-width:
+            540px;
+
+        min-height:
+            auto;
+
+        margin:
+            auto;
+
+    }
+
+
+    .login-info {
+
+        display:
+            none;
+
+    }
+
+
+    .login-card {
+
+        padding:
+            35px 28px 25px;
+
+    }
+
+
+    .mobile-brand {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        gap:
+            10px;
+
+        margin-bottom:
+            25px;
+
+    }
+
+
+    .mobile-brand .login-logo {
+
+        width:
+            40px;
+
+        height:
+            40px;
+
+    }
+
+
+    .mobile-brand b {
+
+        font-family:
+            "Plus Jakarta Sans";
+
+    }
+
+
+    .match-controls,
+    .workspace-form {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+    }
+
+
+    .workspace-header {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+}
+
+
+@media(max-width:560px) {
+
+    .login-card {
+
+        padding:
+            28px 20px 22px;
+
+    }
+
+
+    .login-heading h2 {
+
+        font-size:
+            24px;
+
+    }
+
+
+    .directory-grid,
+    .match-controls,
+    .workspace-form {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .workspace-nav {
+
+        align-items:
+            stretch;
+
+    }
+
+
+    .workspace-tab {
+
+        flex:
+            1 1 42%;
+
+    }
+
+
+    .logout-button {
+
+        margin-left:
+            0;
+
+    }
+
+
+    .workspace-record {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+    }
+
+}
