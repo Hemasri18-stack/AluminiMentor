@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MentorConnect | Learn • Connect • Grow</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="orb a"></div><div class="orb b"></div>
+<div class="app">
+<aside class="sidebar" id="sidebar">
+  <div class="brand"><div class="logo">M</div><div><b>MentorConnect</b><small>Learn • Connect • Grow</small></div></div>
+  <small class="label">YOUR LEARNING LIBRARY</small>
+  <nav id="nav">
+    <button class="nav active" data-page="dashboard">🏠 <span>Dashboard</span></button>
+    <button class="nav" data-page="students">🎓 <span>Students</span></button>
+    <button class="nav" data-page="mentors">💻 <span>Mentors</span></button>
+    <button class="nav" data-page="find">🤝 <span>Find Mentor</span></button>
+    <button class="nav" data-page="sessions">📅 <span>Sessions</span></button>
+    <button class="nav" data-page="tags">🏷️ <span>Interest Tags</span></button>
+    <button class="nav" data-page="reports">📊 <span>Reports</span></button>
+  </nav>
+  <div class="sidebook">📚 <div><b>Keep turning pages.</b><p>Every session is one more page in your career story.</p></div></div>
+  <small class="sidefoot">MentorConnect · Student Edition</small>
+</aside>
+
+<main class="main">
+<header class="topbar"><button id="menu" class="hamb">☰</button><div class="search">⌕ <input id="search" placeholder="Search your learning library..."></div><div class="topright"><button>🔔</button><div class="avatar">HS</div></div></header>
+<div class="stage"><div id="toast"></div>
+
+<section class="page active" data-view="dashboard">
+<div class="hero">
+  <div class="herotxt"><small>WELCOME BACK, LEARNER ✨</small><h1>Turn the next page<br>of your <em>future.</em></h1><p>Meet mentors, explore ideas, schedule meaningful sessions and build the skills that matter.</p>
+  <button class="primary" data-go="find">Find my mentor →</button> <button class="light" data-go="sessions">View sessions</button></div>
+  <div class="heroart"><div class="book"><div class="paper"><small>CHAPTER 01</small><h2>Learn.</h2><p>Ask better questions.<br>Build real skills.</p>━━━━━━<br>━━━━━━</div><div class="paper"><small>CHAPTER 02</small><h2>Grow.</h2><p>Find someone who<br>has walked the path.</p><code>const future = "yours";<br><i>// keep building...</i></code></div></div><span class="float laptop">💻</span><span class="float cap">🎓</span><span class="float coffee">☕</span></div>
+</div>
+<div class="head"><div><small>YOUR LIBRARY</small><h2>Learning at a glance</h2></div><span class="status"><i id="dot"></i> Backend <b id="apiStatus">checking</b></span></div>
+<div class="stats"><div>🎓 <span>Students</span><b id="studentCount">—</b></div><div>💻 <span>Mentors</span><b id="mentorCount">—</b></div><div>🤝 <span>Mentorships</span><b id="mentorshipCount">—</b></div><div>📅 <span>Sessions</span><b id="sessionCount">—</b></div></div>
+<div class="twocol"><div class="panel"><small>QUICK ACTIONS</small><h3>Choose your next chapter</h3><div class="quick">
+<button data-go="students">🎓<b>Add Student</b><small>Register a learner</small></button><button data-go="mentors">💻<b>Add Mentor</b><small>Share expertise</small></button><button data-go="sessions">📅<b>Book Session</b><small>Plan a learning call</small></button><button data-go="find">✨<b>Get Matched</b><small>Discover mentors</small></button></div></div>
+<div class="quote"><small>STUDY CORNER</small><div>“</div><h3>The expert in anything<br>was once a beginner.</h3><p>📚　💻　📝　☕</p></div></div>
+</section>
+
+<section class="page" data-view="students"><div class="pagehead"><div><small>LEARNERS</small><h1>Student Library</h1><p>Manage student profiles.</p></div><button class="primary" data-add="students">+ Add Student</button></div><div class="toolbar"><input data-filter="students" placeholder="Search students..."><button class="light" data-refresh>↻ Refresh</button></div><div id="studentsList" class="cards"></div></section>
+
+<section class="page" data-view="mentors"><div class="pagehead"><div><small>GUIDES & EXPERTS</small><h1>Mentor Library</h1><p>Discover alumni and professionals.</p></div><button class="primary" data-add="mentors">+ Add Mentor</button></div><div class="toolbar"><input data-filter="mentors" placeholder="Search mentors..."><button class="light" data-refresh>↻ Refresh</button></div><div id="mentorsList" class="cards"></div></section>
+
+<section class="page" data-view="find"><div class="pagehead"><div><small>SMART MATCHING</small><h1>Find Your Mentor</h1><p>Ask the backend for mentor suggestions.</p></div></div><div class="match"><div>✨</div><label>Student ID<input id="matchId" type="number" placeholder="e.g. 1"></label><button class="primary" id="findBtn">Find matches →</button></div><div id="matches" class="cards"></div></section>
+
+<section class="page" data-view="sessions"><div class="pagehead"><div><small>LEARNING MEETINGS</small><h1>Session Calendar</h1><p>Schedule mentorship sessions.</p></div><button class="primary" data-add="sessions">+ Add Session</button></div><div class="toolbar"><input data-filter="sessions" placeholder="Search sessions..."><button class="light" data-refresh>↻ Refresh</button></div><div id="sessionsList" class="cards"></div></section>
+
+<section class="page" data-view="tags"><div class="pagehead"><div><small>AREAS OF INTEREST</small><h1>Interest Tags</h1><p>Organize learning interests.</p></div><button class="primary" data-add="tags">+ Add Tag</button></div><div id="tagsList" class="taggrid"></div></section>
+
+<section class="page" data-view="reports"><div class="pagehead"><div><small>INSIGHTS</small><h1>Mentorship Report</h1><p>View your backend report.</p></div><button class="primary" id="reportBtn">Generate Report</button></div><div id="report" class="report">📊<h3>Your report will appear here</h3><p>Calls <code>/api/mentorships/report</code>.</p></div></section>
+
+</div></main></div>
+
+<div id="modal" class="modal hidden"><div class="backdrop" data-close></div><div class="modalbox"><button class="close" data-close>×</button><small id="modalEyebrow">NEW RECORD</small><h2 id="modalTitle">Add record</h2><p>Fields are sent directly to your REST endpoint.</p><form id="form"></form></div></div>
+<script src="api.js"></script><script src="app.js"></script>
+</body></html>
