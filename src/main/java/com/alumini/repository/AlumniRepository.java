@@ -1,10 +1,8 @@
-package com.mentorconnect.repository;
+package com.alumini.repository;
 
-import com.mentorconnect.entity.Student;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
+import com.alumini.entity.Alumni;
 
-public interface StudentRepository extends JpaRepository<Student, Long> {
-    Optional<Student> findByEmailIgnoreCase(String email);
+public interface AlumniRepository extends JpaRepository<Alumni, Long> {
 }

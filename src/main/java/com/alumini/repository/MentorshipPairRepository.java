@@ -1,10 +1,12 @@
-package com.mentorconnect.repository;
+package com.alumini.repository;
 
-import com.mentorconnect.entity.Alumni;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
+import com.alumini.entity.MentorshipPair;
 
-public interface AlumniRepository extends JpaRepository<Alumni, Long> {
-    Optional<Alumni> findByEmailIgnoreCase(String email);
+public interface MentorshipPairRepository extends JpaRepository<MentorshipPair, Long> {
+
+    long countByAlumniIdAndStatus(Long id, String status);
+
+    boolean existsByAlumniIdAndStudentId(Long alumniId, Long studentId);
 }

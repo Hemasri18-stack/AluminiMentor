@@ -1,62 +1,59 @@
-package com.mentorconnect.service;
-
-import com.mentorconnect.entity.InterestTag;
-import com.mentorconnect.exception.BusinessException;
-import com.mentorconnect.exception.ResourceNotFoundException;
-import com.mentorconnect.repository.InterestTagRepository;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+package com.alumini.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
+import com.alumini.entity.MentorshipPair;
+import com.alumini.entity.Session;
+import com.alumini.exception.BusinessException;
+import com.alumini.exception.ResourceNotFoundException;
+import com.alumini.repository.MentorshipPairRepository;
+import com.alumini.repository.SessionRepository;
+
 @Service
-public class InterestTagService {
+public class SessionService {
 
-    private final InterestTagRepository repository;
+    private final SessionRepository sessionRepository;
+    private final MentorshipPairRepository mentorshipPairRepository;
 
-    public InterestTagService(InterestTagRepository repository) {
-        this.repository = repository;
+    public SessionService(
+            SessionRepository sessionRepository,
+            MentorshipPairRepository mentorshipPairRepository) {
+        this.sessionRepository = sessionRepository;
+        this.mentorshipPairRepository = mentorshipPairRepository;
     }
 
-    @Transactional
-    public InterestTag create(InterestTag tag) {
-        String name = tag.getName().trim();
-        if (repository.findByNameIgnoreCase(name).isPresent()) {
-            throw new BusinessException("Interest tag already exists: " + name);
+    public Session create(Long mentorshipPairId, Session session) {
+        MentorshipPair mentorshipPair = mentorshipPairRepository.findById(mentorshipPairId)
+                .orElseThrow(() -> new ResourceNotFoundException("Mentorship not found"));
+
+        if (!"ACTIVE".equalsIgnoreCase(mentorshipPair.getStatus())) {
+            throw new BusinessException("Mentorship is not active");
         }
-        tag.setName(name);
-        return repository.save(tag);
+
+        session.setMentorshipPair(mentorshipPair);
+        return sessionRepository.save(session);
     }
 
-    @Transactional(readOnly = true)
-    public List<InterestTag> getAll() {
-        return repository.findAll();
+    public List<Session> all() {
+        return sessionRepository.findAll();
     }
 
-    @Transactional(readOnly = true)
-    public InterestTag getById(Long id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new ResourceNotFoundException("Interest tag not found with id: " + id));
+    public Session one(Long id) {
+        return sessionRepository.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Session not found"));
     }
 
-    @Transactional
-    public InterestTag update(Long id, InterestTag request) {
-        InterestTag tag = getById(id);
-        String name = request.getName().trim();
-
-        repository.findByNameIgnoreCase(name).ifPresent(existing -> {
-            if (!existing.getId().equals(id)) {
-                throw new BusinessException("Interest tag already exists: " + name);
-            }
-        });
-
-        tag.setName(name);
-        return repository.save(tag);
+    public Session update(Long id, Session updatedSession) {
+        Session session = one(id);
+        session.setTopic(updatedSession.getTopic());
+        session.setSessionDate(updatedSession.getSessionDate());
+        session.setDurationMinutes(updatedSession.getDurationMinutes());
+        return sessionRepository.save(session);
     }
 
-    @Transactional
     public void delete(Long id) {
-        InterestTag tag = getById(id);
-        repository.delete(tag);
+        sessionRepository.delete(one(id));
     }
 }

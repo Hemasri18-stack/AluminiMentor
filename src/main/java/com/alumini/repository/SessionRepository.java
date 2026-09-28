@@ -1,10 +1,10 @@
-package com.mentorconnect.repository;
+package com.alumini.repository;
 
-import com.mentorconnect.entity.InterestTag;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Optional;
+import com.alumini.entity.Session;
 
-public interface InterestTagRepository extends JpaRepository<InterestTag, Long> {
-    Optional<InterestTag> findByNameIgnoreCase(String name);
+public interface SessionRepository extends JpaRepository<Session, Long> {
+
+    long countByMentorshipPairId(Long id);
 }

@@ -1,21 +1,12 @@
-package com.mentorconnect.repository;
+package com.alumini.repository;
 
-import com.mentorconnect.entity.MentorshipPair;
-import org.springframework.data.jpa.repository.JpaRepository;
-
-import java.util.Collection;
-import java.util.List;
 import java.util.Optional;
 
-public interface MentorshipPairRepository extends JpaRepository<MentorshipPair, Long> {
+import org.springframework.data.jpa.repository.JpaRepository;
 
-    long countByAlumniIdAndStatusIn(Long alumniId, Collection<String> statuses);
+import com.alumini.entity.InterestTag;
 
-    boolean existsByAlumniIdAndStudentId(Long alumniId, Long studentId);
+public interface InterestTagRepository extends JpaRepository<InterestTag, Long> {
 
-    List<MentorshipPair> findByStudentId(Long studentId);
-
-    List<MentorshipPair> findByAlumniId(Long alumniId);
-
-    Optional<MentorshipPair> findByIdAndStatus(Long id, String status);
+    Optional<InterestTag> findByNameIgnoreCase(String name);
 }
